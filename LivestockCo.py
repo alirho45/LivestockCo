@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-
+#might remove SQL as too complex and might not be able to ensure its working for everyone and replce with .csv for the purpose of this course
 # Secure database credentials
 DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_USER = os.getenv("DB_USER", "root")
