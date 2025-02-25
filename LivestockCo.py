@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
+
 #might remove SQL as too complex and might not be able to ensure its working for everyone and replce with .csv for the purpose of this course
 # Secure database credentials
 DB_HOST = os.getenv("DB_HOST", "localhost")
@@ -38,7 +39,7 @@ def hash_password(password):
 def check_password(stored_password, provided_password):
     return bcrypt.checkpw(provided_password.encode('utf-8'), stored_password.encode('utf-8'))
 
-# Database authentication with improved error handling
+# Database authentication with error handling
 def authenticate_user(username, password, callback):
     def db_thread():
         try:
@@ -62,7 +63,7 @@ def authenticate_user(username, password, callback):
 
     threading.Thread(target=db_thread, daemon=True).start()
 
-# Function to handle login with improved error display
+# Function to handle login with error display
 def login():
     username = username_entry.get()
     password = password_entry.get()
