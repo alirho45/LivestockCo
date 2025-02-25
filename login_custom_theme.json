@@ -1,0 +1,13 @@
+{
+  "theme": {
+    "colors": {
+      "dark_teal": "#3A5460",
+      "medium_blue": "#4F7486",
+      "muted_pink": "#D78C8E",
+      "bright_coral": "#F1686A",
+      "light_peach": "#FDDAC0",
+      "very_light_cream": "#FEE6C4"
+    }
+  }
+}
+
