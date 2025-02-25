@@ -1,0 +1,39 @@
+# Database authentication with better error handling
+def authenticate_user(username, password, callback):
+    def db_thread():
+        try:
+            connection = mysql.connector.connect(
+                host=DB_HOST, user=DB_USER, password=DB_PASSWORD, database=DB_NAME
+            )
+            cursor = connection.cursor()
+            cursor.execute("SELECT password FROM user WHERE username = %s", (username,))
+            result = cursor.fetchone()
+            cursor.close()
+            connection.close()
+
+            if result and check_password(result[0], password):
+                callback(True, None)
+            else:
+                callback(False, "Invalid username or password")
+
+        except mysql.connector.Error as err:
+            print(f"Database error: {err}")  # Log for debugging
+            callback(False, "Database connection error. Please try again later.")
+
+    threading.Thread(target=db_thread, daemon=True).start()
+
+# Function to handle login with improved error display
+def login():
+    username = username_entry.get()
+    password = password_entry.get()
+    login_button.configure(state="disabled")
+    error_label.configure(text="Authenticating...", text_color="blue")
+
+    def on_auth_result(success, message):
+        if success:
+            open_homescreen()
+        else:
+            error_label.configure(text=message, text_color="red")
+        login_button.configure(state="normal")
+
+    authenticate_user(username, password, on_auth_result)
