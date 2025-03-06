@@ -1,0 +1,5 @@
+﻿userid,farm_id,username,password_hash,email,phone
+3862,48374,farm_wizard,$2b$12$FlZmro8qXvN6RPpIjz5KoO4f91wDtyTuJTSaOIwQ9z4nyeFkoPhiW,farm1@abc.com,8121234567
+7437,74803,oxby,$2b$12$CYZIvqycWZ7kvOdO3bsYg.rK0/bL/DDq7IDfnPhv4bcsBlBpwmY6O,farm2@abc.com,8124567890
+8484,48374,mrfarm,$2b$12$/RmW/QNWN07qfXq7RSB7ZOB3dshYoyBoAKuOAvkxYu7s88.EC0rna,farm3@abc.com,8126781234
+3107,3107,Windhof,$2b$12$tZYvnsKHmqMosCQXtHtNQuD1ccEb6o5RLttdfdHrZc80gFsO5SXBi,trhodes45@ivytech.edu,7609081465
